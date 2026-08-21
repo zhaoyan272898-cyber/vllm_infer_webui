@@ -1,9 +1,7 @@
 # vllm_infer_webui
-# vLLM Infer WebUI
-
 一个基于 **Gradio** 与 **vLLM OpenAI 兼容接口**的多模态推理界面。用户可以上传图片或视频，对图片或视频抽帧发起视觉问答，并将分析结果导出为 PDF、Excel 或 Markdown。
 
-当前默认提示词面向铁路工务巡检场景，用于判断铁轨扣件是否被沙尘掩埋；你可以在 [`config.py`](./config.py) 中替换为任意视觉分析业务的提示词。
+你可以在 [`config.py`](./config.py) 中替换为任意视觉分析业务的提示词。
 
 > **架构说明：** 本项目的 WebUI 不直接加载模型权重。`start.sh` 先启动独立的 vLLM 服务，`app.py` 再通过 HTTP 向 vLLM 的 `/v1/chat/completions` 接口发起多模态请求。vLLM 官方提供 OpenAI 兼容的 Chat API，并支持视觉输入。[1][1]
 
