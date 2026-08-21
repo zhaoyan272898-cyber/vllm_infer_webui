@@ -1,0 +1,19 @@
+# 基础推理框架
+torch>=2.1.0
+transformers>=4.37.0
+accelerate>=0.25.0
+sentencepiece>=0.1.99
+protobuf>=3.20.0
+
+# AWQ 量化推理支持
+autoawq>=0.2.0          # 核心 AWQ 库（支持 AWQ 模型加载）
+einops>=0.7.0           # 部分 AWQ 模型依赖
+triton>=2.1.0           # 可选，但可提升 AWQ 性能（需 CUDA）
+compressed-tensors>=0.15.0   # ← 新增（解决错误）
+# WebUI 与工具
+gradio>=4.0.0
+Pillow>=10.0.0
+pandas>=2.0.0
+openpyxl>=3.1.0
+reportlab>=3.6.0
+tabulate>=0.9.0         # 用于 Markdown 表格导出
